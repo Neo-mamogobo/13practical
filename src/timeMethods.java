@@ -1,7 +1,7 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N =30;
+    public static int N =32654;
     public static void main(String[] args){
         int[] X = new int[32654];
         for(int i = 0; i < X.length; i++){
@@ -24,8 +24,8 @@ public class timeMethods{
             start = System.currentTimeMillis();
 
             // call the procedures to time here:
-            linearsearch(X,repetition);
-            binarysearch (X, repetition);
+            linearsearch(X, n);
+            binarysearch (X, n);
             // Figure out how to alter this guideline here,
 
             finish = System.currentTimeMillis();
@@ -63,8 +63,8 @@ public class timeMethods{
 
             if(X[mid]==target) return mid;
             else if(X[mid]<target){
-                high = mid - 1;
-            }else low = mid + 1;
+                low = mid + 1;
+            }else high = mid - 1;
         }
         return -1;
     }
