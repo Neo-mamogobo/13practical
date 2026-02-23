@@ -1,7 +1,9 @@
+import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N = 32654;
+    public static int N =0;
     public static void main(String[] args){
+        int[] X = new int[32654];
 
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat("0.0000");
@@ -18,8 +20,8 @@ public class timeMethods{
             start = System.currentTimeMillis();
 
             // call the procedures to time here:
-            linearsearch(...);
-            binarysearch (...);
+            linearsearch(X,repetitions);
+            binarysearch (X, repetitions);
             // Figure out how to alter this guideline here,
 
             finish = System.currentTimeMillis();
