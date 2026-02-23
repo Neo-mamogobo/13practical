@@ -1,7 +1,7 @@
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.text.*;
 
 public class timeMethods{
-    public static int N =32654;
+    public static int N =20;
     public static void main(String[] args){
         int[] X = new int[32654];
         for(int i = 0; i < X.length; i++){
@@ -19,13 +19,12 @@ public class timeMethods{
         int repetition, repetitions = 30;
 
         runTime = 0;
-        int target = X.length - 1;
         for(repetition = 0; repetition < repetitions; repetition++) {
             start = System.nanoTime();
 
             // call the procedures to time here:
-            linearsearch(X, n);
-            binarysearch (X, n);
+            LinearSearch(X, n);
+            BinarySearch (X, n);
             // Figure out how to alter this guideline here,
 
             finish = System.nanoTime();
@@ -41,41 +40,39 @@ public class timeMethods{
         System.out.printf("\n\n\fStatistics\n");
         System.out.println("________________________________________________");
         System.out.println("Total time   =           " + runTime/1000 + "s.");
-        System.out.println("Total time\u00b2  =           " + runTime2);
+        System.out.println("Total time²  =           " + runTime2);
         System.out.println("Average time =           " + fiveD.format(aveRuntime/1000)
-                + "s. " + '\u00B1' + " " + fourD.format(stdDeviation) + "ms.");
+                + "s. " + '±' + " " + fourD.format(stdDeviation) + "ms.");
         System.out.println("Standard deviation =     " + fourD.format(stdDeviation));
         System.out.println("n            =           " + n);
         System.out.println("Average time / run =     " + fiveD.format(aveRuntime/n*1000)
-                + '\u00B5' + "s. ");
+                + 'µ' + "s. ");
 
         System.out.println("Repetitions  =             " + repetitions);
         System.out.println("________________________________________________");
         System.out.println();
         System.out.println(); }
 
-    public static int binarysearch(int[] X, int target) {
+    public static void BinarySearch(int[] X, int target) {
         int low = 0;
         int high = X.length - 1;
 
         while(low<=high){
             int mid = (low+high)/2;
 
-            if(X[mid]==target) return mid;
+            if(X[mid]==target) return;
             else if(X[mid]<target){
                 low = mid + 1;
             }else high = mid - 1;
         }
-        return -1;
     }
 
-    public static int linearsearch(int[] X, int target) {
+    public static void LinearSearch(int[] X, int target) {
 
         for(int i = 0; i < X.length; i++){
             if(X[i]==target){
-                return i;
+                return;
             }
         }
-        return -1;
     }
 }
