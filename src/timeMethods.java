@@ -21,14 +21,14 @@ public class timeMethods{
         runTime = 0;
         int target = X.length - 1;
         for(repetition = 0; repetition < repetitions; repetition++) {
-            start = System.currentTimeMillis();
+            start = System.nanoTime();
 
             // call the procedures to time here:
             linearsearch(X, n);
             binarysearch (X, n);
             // Figure out how to alter this guideline here,
 
-            finish = System.currentTimeMillis();
+            finish = System.nanoTime();
 
             time = (double)(finish - start);
             runTime += time;
