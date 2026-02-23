@@ -1,7 +1,7 @@
-import java.text.*;
+import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N =20;
+    public static int N =30;
     public static void main(String[] args){
         int[] X = new int[32654];
         for(int i = 0; i < X.length; i++){
@@ -37,7 +37,7 @@ public class timeMethods{
         double stdDeviation =
                 Math.sqrt(runTime2 - repetitions*aveRuntime*aveRuntime)/(repetitions-1);
 
-        System.out.printf("\n\n\fStatistics\n");
+        System.out.print("\n\n\fStatistics\n");
         System.out.println("________________________________________________");
         System.out.println("Total time   =           " + runTime/1000 + "s.");
         System.out.println("Total time²  =           " + runTime2);
