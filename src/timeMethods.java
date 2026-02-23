@@ -3,7 +3,7 @@ import java.lang.Math.*;   import java.io.*;   import java.text.*;
 public class timeMethods{
     public static int N =30;
     public static void main(String[] args){
-        int[] X = new int[32654];
+        int[] X = new int[N];
         for(int i = 0; i < X.length; i++){
             X[i] = i;
         }
