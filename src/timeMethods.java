@@ -1,9 +1,12 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-    public static int N =0;
+    public static int N =30;
     public static void main(String[] args){
         int[] X = new int[32654];
+        for(int i = 0; i < X.length; i++){
+            X[i] = i;
+        }
 
         DecimalFormat twoD = new DecimalFormat("0.00");
         DecimalFormat fourD = new DecimalFormat("0.0000");
@@ -16,12 +19,13 @@ public class timeMethods{
         int repetition, repetitions = 30;
 
         runTime = 0;
+        int target = X.length - 1;
         for(repetition = 0; repetition < repetitions; repetition++) {
             start = System.currentTimeMillis();
 
             // call the procedures to time here:
-            linearsearch(X,repetitions);
-            binarysearch (X, repetitions);
+            linearsearch(X,repetition);
+            binarysearch (X, repetition);
             // Figure out how to alter this guideline here,
 
             finish = System.currentTimeMillis();
